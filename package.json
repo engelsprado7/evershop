@@ -11,7 +11,9 @@
     "seed": "evershop seed",
     "theme:active": "evershop theme:active",
     "theme:twizz": "evershop theme:twizz",
-    "theme:create": "evershop theme:create"
+    "theme:create": "evershop theme:create",
+     "user:create": "evershop user:create",
+    "user:changePassword": "evershop user:changePassword"
   },
   "workspaces": [
     "extensions/*",
