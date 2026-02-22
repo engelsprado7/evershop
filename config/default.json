@@ -1,0 +1,22 @@
+{
+  "shop": {
+    "language": "en",
+    "currency": "USD"
+  },
+  "system": {
+    "extensions": [
+      {
+        "name": "sample",
+        "resolve": "extensions/sample",
+        "enabled": true
+      },
+      {
+        "name": "google_login",
+        "resolve": "node_modules/@evershop/google_login",
+        "enabled": true,
+        "priority": 10
+      }
+    ],
+    "theme": "test-theme"
+  }
+}

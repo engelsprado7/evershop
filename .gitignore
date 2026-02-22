@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# EverShop build output
+.evershop/
+
+# Uploaded media (optional: remove if you want to track media)
+media/
+
+# OS and editor
+.DS_Store
+*.log
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Extension build output (source is in src/; dist is built or copied)
+# Uncomment to ignore dist and build before deploy:
+# extensions/*/dist/
