@@ -6,13 +6,12 @@
   "scripts": {
     "setup": "evershop install",
     "start": "evershop start",
-    "build": "evershop build",
-    "dev": "evershop dev",
+    "build": "evershop build --skip-minify", 
     "seed": "evershop seed",
     "theme:active": "evershop theme:active",
     "theme:twizz": "evershop theme:twizz",
     "theme:create": "evershop theme:create",
-     "user:create": "evershop user:create",
+    "user:create": "evershop user:create",
     "user:changePassword": "evershop user:changePassword"
   },
   "workspaces": [
