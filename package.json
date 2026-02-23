@@ -5,14 +5,15 @@
   "private": true,
   "scripts": {
     "setup": "evershop install",
-    "start": "evershop start",
-    "build": "evershop build --skip-minify", 
-    "seed": "evershop seed",
-    "theme:active": "evershop theme:active",
-    "theme:twizz": "evershop theme:twizz",
-    "theme:create": "evershop theme:create",
-    "user:create": "evershop user:create",
-    "user:changePassword": "evershop user:changePassword"
+    "start": "npx @evershop/evershop start",
+    "build": "npx @evershop/evershop build --skip-minify",
+    "dev": "npx @evershop/evershop dev",
+    "seed": "npx @evershop/evershop seed",
+    "theme:active": "npx @evershop/evershop theme:active",
+    "theme:twizz": "npx @evershop/evershop theme:twizz",
+    "theme:create": "npx @evershop/evershop theme:create",
+    "user:create": "npx @evershop/evershop user:create",
+    "user:changePassword": "npx @evershop/evershop user:changePassword"
   },
   "workspaces": [
     "extensions/*",
