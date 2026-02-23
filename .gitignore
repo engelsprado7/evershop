@@ -24,3 +24,5 @@ media/
 # Extension build output (source is in src/; dist is built or copied)
 # Uncomment to ignore dist and build before deploy:
 # extensions/*/dist/
+node_modules.tar.gz
+oryx-manifest.toml

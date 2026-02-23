@@ -24,15 +24,28 @@ jobs:
       - name: Build Evershop
         run: npm run build
 
-      # DO NOT prune
-      # DO NOT create tar manually
-
+      # 🔥 Create a CLEAN deployment directory
+      - name: Prepare clean deployment folder
+        run: |
+          mkdir deploy
+          cp -r public deploy/ || true
+          cp -r build deploy/ || true
+          cp -r node_modules deploy/
+          cp package.json deploy/
+          cp package-lock.json deploy/ || true
+          cp .env deploy/ || true
+          
+      # 🔥 Create ZIP from clean folder only
       - name: Create deployment zip
         run: |
-          zip -r release.zip . \
-            -x ".git/*" \
-               ".github/*" \
-               "node_modules/.cache/*"
+          cd deploy
+          zip -r ../release.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: release.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
