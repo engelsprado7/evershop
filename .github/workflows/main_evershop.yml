@@ -24,23 +24,25 @@ jobs:
       - name: Build Evershop
         run: npm run build
 
-      # 🔥 Create a CLEAN deployment directory
+      # EverShop deploy layout: .evershop (build output), config, extensions, themes
+      # DB credentials: set in Azure Web App → Configuration → Application settings
+      # (Azure PostgreSQL Flexible Server: DB_SSLMODE=require, DB_HOST=*.postgres.database.azure.com)
       - name: Prepare clean deployment folder
         run: |
           mkdir deploy
-          cp -r public deploy/ || true
-          cp -r build deploy/ || true
+          cp -r .evershop deploy/
+          cp -r config deploy/
+          cp -r extensions deploy/
+          cp -r themes deploy/
           cp -r node_modules deploy/
           cp package.json deploy/
           cp package-lock.json deploy/ || true
-          cp .env deploy/ || true
 
-      # 🔥 Create ZIP from clean folder only
       - name: Create deployment zip
         run: |
           cd deploy
           zip -r ../release.zip .
-          
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
